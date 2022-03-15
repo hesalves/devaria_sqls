@@ -1,0 +1,27 @@
+-- TRAZER NOMES DOS CLIENTES CLASSIFICNDO SE É DE FORA OU DENTRO DE SP
+
+
+SELECT
+    CASE 
+        WHEN Estado = 'SP' THEN 'DENTRO DE SÃO PAULO'
+        WHEN Estado = 'RJ' THEN 'DENTRO DE Rio de Janeiro'
+        ELSE 'FORA E SÃO PAULO'
+    END AS REGIAO,
+    Nome, 
+    Estado
+FROM
+    Cliente
+
+
+-- TRAZER AS FORMAS DE PGTO CLASSIFICANDO EM CARTÃO, REFEIÇÃO   OU OUTRO TIPO DE PGTO
+
+SELECT
+    Tipo,
+    CASE 
+        WHEN Tipo  LIKE '%Refeição%' THEN 'Cartão Refeição'
+        WHEN Tipo  LIKE '%Cartão%' THEN 'Cartão'
+        ELSE 'Outro tipo de pagamento'
+    END AS TIPO
+    
+FROM
+    Forma_Pagamento

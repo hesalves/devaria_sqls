@@ -1,0 +1,21 @@
+-- SELECIONAR CLIENTES E QTDE DE PONTOS FIDELIDADE - JUNTANDO TABELAS
+SELECT
+    C.CPF AS CPF_Cliente,
+    C.Nome AS Cliente_Nome,
+    C.Logadouro,
+    Fidelidade.Pontos
+FROM 
+    Cliente AS C
+    INNER JOIN Fidelidade ON C.Codigo = Fidelidade.Codigo_Cliente
+
+-- Qual qtd de venda de cada produto vendido com o nome do produto
+
+SELECT
+    SUM(I.Quantidade) AS Qtd,
+    P.Nome
+
+FROM 
+    Item_Pedido_Venda AS I
+    INNER JOIN Produto AS P ON I.Codigo_Produto = P.Codigo
+GROUP BY
+    P.Nome

@@ -1,0 +1,55 @@
+valor total de impostos ?
+
+SELECT
+    SUM(Valor_Imposto)
+FROM
+    Pedido_Venda
+
+quantos pontos de fidelidades já distribuiu ?
+
+SELECT
+    SUM(Pontos)
+FROM
+    Fidelidade
+
+Média de gastos
+
+SELECT
+     AVG(Valor)
+FROM
+     Pedido_Compra
+
+Media de vendas
+
+SELECT
+     AVG(Valor)
+FROM
+     Pedido_Venda
+
+Media de quantidade
+
+SELECT
+     AVG(Quantidade)
+FROM
+     Item_Pedido_Venda
+
+
+SELECT
+    Valor - Valor_Imposto
+FROM
+    Pedido_Venda
+
+SELECT
+    Valor + Valor_Imposto
+FROM
+    Pedido_Venda
+
+SELECT
+    Pontos / 2
+FROM
+    Fidelidade
+
+SELECT
+    Valor_Unitario + Valor_Imposto
+FROM
+    Item_Pedido_Venda

@@ -1,0 +1,27 @@
+SELECT
+    COUNT(*) AS QTD_CLIENTES,
+    Cidade
+FROM
+    Cliente
+GROUP BY
+    Cidade
+
+-- Qual a qtd de forma de pgto por tipo
+
+SELECT
+    COUNT(*) AS QTD_FORMA_PGTO,
+    Tipo
+FROM
+    Forma_Pagamento
+GROUP BY
+    Tipo
+
+-- Qual valor de vena por cada mês do ano
+
+SELECT
+    SUM(Valor) AS VALOR_MES,
+    MONTH(data)
+FROM
+    Pedido_Venda
+GROUP BY
+    MONTH(data)
